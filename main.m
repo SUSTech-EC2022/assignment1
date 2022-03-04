@@ -87,7 +87,7 @@ for problemNum = 1:14
         Optimizer.x = 0.729843788;
         Optimizer.c1 = 2.05;
         Optimizer.c2 = 2.05;
-        Optimizer.ShiftSeverity = 1;%initial shift severity
+        Optimizer.ShiftSeverity = 1;% 算法学习到的shiftSeverity
         Optimizer.QuantumRadius = Optimizer.ShiftSeverity;
         Optimizer.QuantumNumber = 5;
         Optimizer.SwarmNumber = 10;
@@ -114,6 +114,6 @@ for problemNum = 1:14
     E_o = [mean(OfflineError),median(OfflineError),std(OfflineError)/sqrt(RunNumber)];
     close;clc;
     disp(['Offline error ==> ', ' Mean = ', num2str(E_o(1)), ', Median = ', num2str(E_o(2)), ', Standard Error = ', num2str(E_o(3))]);
-    fprintf(f, '%.f ', OfflineError);
+    fprintf(f, '%f ', OfflineError);
     fclose(f);
 end
